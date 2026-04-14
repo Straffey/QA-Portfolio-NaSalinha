@@ -16,4 +16,4 @@ Este repositório contém a documentação da auditoria de qualidade realizada d
 - Vs Code
 
 #  Evidências de Setup
-![Sistema Funcionando](./evidencias/image.png)
+![Sistema Funcionando](Evidencias/image.png)
