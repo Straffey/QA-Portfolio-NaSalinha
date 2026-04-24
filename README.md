@@ -1,68 +1,67 @@
-# Auditoria de QA - Projeto NaSalinha (Matheus Marques)
-Auditoria realizada por: Matheus Fellipe Araujo Marques
-Curso: Ciência da Computação - UFLA
+# 🚀 QA Audit Portfolio — Projeto NaSalinha
 
-Este repositório contém a documentação da auditoria de qualidade realizada durante o Desafio 2026/1.
-
-# Progresso - Semana 2
-- [x] Configuração do ambiente local (Docker)
-- [x] Integração com Mailtrap para testes de e-mail
-- [x] Integração com Cloudinary para armazenamento de mídia
-- [x] Setup do banco de dados (Prisma/PostgreSQL)
-
-# Tecnologias
-- Docker
-- Mailtrap
-- Cloudinary
-- Insomnia
-- Vs Code
-
-#  Evidências de Setup
-![Sistema Funcionando](Evidencias/image.png)
+**Auditor:** Matheus Fellipe Araujo Marques
+**Instituição:** Ciência da Computação — UFLA
+**Desafio:** Trainee Comp Júnior 2026/1
 
 ---
 
-## 🎯 Planejamento de Testes (Semana 3)
+## 📅 Cronograma de Auditoria
 
-Para a próxima etapa, mapeei os seguintes cenários de teste para garantir a integridade das funções principais do sistema:
+### 🏗️ Semana 2: Setup, Exploração e Documentação
+Nesta etapa, o foco foi a configuração da infraestrutura e o entendimento das regras de negócio do sistema.
 
-### 🔑 Autenticação e Cadastro
-| Cenário | Método | Endpoint | Resultado Esperado |
-| :--- | :--- | :--- | :--- |
-| Login com credenciais válidas | POST | `/api/auth/login` | Status 200 e recebimento do Token JWT |
-| Login com senha incorreta | POST | `/api/auth/login` | Status 401 e mensagem de erro amigável |
-| Cadastro de e-mail já existente | POST | `/api/auth/register` | Status 400 e bloqueio de duplicidade |
+**Ações Realizadas:**
+- [x] Subida do ambiente local usando **Docker Compose**.
+- [x] Criação do repositório no GitHub e estruturação das pastas.
+- [x] Navegação pelo sistema para entender o fluxo do usuário (Cadastro, Login e Check-in).
+- [x] Configuração de variáveis de ambiente (`.env`) e integração com **Mailtrap** e **Cloudinary**.
+- [x] Redação da documentação inicial e estratégia de testes.
 
-### 📩 Recuperação de Senha (Esqueci a Senha)
-| Cenário | Método | Endpoint | Resultado Esperado |
-| :--- | :--- | :--- | :--- |
-| Solicitar para e-mail cadastrado | POST | `/api/auth/forgot-password` | Recebimento do link no Mailtrap |
-| Solicitar para e-mail inexistente | POST | `/api/auth/forgot-password` | Erro informando que usuário não existe |
+**Evidência de Infraestrutura:**
+![Ambiente Rodando](./Evidencias/image.png)
+> *Status: Backend e Banco de Dados PostgreSQL operacionais.*
 
 ---
 
-## 🐞 Gestão de Falhas (Bug Reports)
+### 📋 Semana 3: Planejamento e Design de Testes
+Criação dos cenários detalhados para as 3 áreas core do sistema, definindo o que testar e os resultados esperados.
 
-Utilizo a aba **[Issues](https://github.com/Straffey/QA-Portfolio-NaSalinha/issues)** deste repositório para documentar falhas técnicas encontradas durante a auditoria. Atualmente, o seguinte bug está mapeado:
+#### 🔑 Área Core 1: Autenticação JWT
+| ID | Caso de Teste | Tipo | Resultado Esperado |
+| :--- | :--- | :--- | :--- |
+| **CT-AUTH-01** | Login com credenciais válidas | API (Positivo) | Status 200 OK e recebimento do Token JWT |
+| **CT-AUTH-02** | Login com senha incorreta | API (Negativo) | Status 401 Unauthorized e mensagem amigável |
+| **CT-AUTH-03** | Validação de Regressão: Acesso após correção | Regressão | Garantir que o token liberado acessa rotas privadas |
 
-* **ID #1:** Erro 401 (Unauthorized) na integração com Cloudinary.
+**Evidência de Validação (Token JWT):**
+![Token Gerado](Evidencias/01-login-sucesso-token.png)
 
-## 🚀 Semana 3: Auditoria Técnica
-Nesta etapa, realizei a validação do ambiente de backend do projeto NaSalinha.
+#### 📸 Área Core 2: Check-in por Foto
+* **CT-CHECK-01 (API - Positivo):** Enviar imagem `.png` válida e validar status `201 Created` no backend.
+* **CT-CHECK-02 (Funcional - Negativo):** Tentar enviar check-in sem arquivo e validar bloqueio do sistema.
 
-Ações realizadas:
+**Evidência de Auditoria de API:**
+![Exportação Insomnia](./Evidencias/image_6ac798.png)
 
-Setup: Clonagem do repositório base e configuração de variáveis de ambiente (.env).
+#### 🏆 Área Core 3: Sistema de Pontos
+* **CT-PONTOS-01 (API - Positivo):** Validar se o saldo no endpoint `/api/rankings` reflete o check-in aprovado.
+* **CT-PONTOS-02 (Regressão):** Validar integridade dos pontos após simulação de deleção de check-in.
 
-Containerização: Inicialização dos serviços de Banco de Dados (PostgreSQL) e API via Docker Compose.
+**Evidência de Persistência no Banco:**
+![Dados no Prisma](./Evidencias/image_6ac375.png)
 
-Persistência: Sincronização do schema do banco de dados utilizando Prisma ORM (npx prisma migrate dev).
+---
 
-Validação de API: Testes de integração das rotas de autenticação via Insomnia, validando a geração de JWT (JSON Web Token).
+## 🛠️ Ferramentas de Gestão
+Utilizo o **GitHub Projects** para gerenciar o ciclo de vida dos testes (Ready, In Test, Done) e a aba **[Issues](https://github.com/Straffey/QA-Portfolio-NaSalinha/issues)** para documentação detalhada de falhas.
 
-## ⏩ Próximos Passos (Semana 4 & 5)
-Com o ambiente estável e autenticação funcional, o foco agora será:
+* **Bug Report #1:** Inconsistência de porta mapeada (Docker: 5001).
+* **Bug Report #2:** Erro de autorização em integração de mídia.
 
-Validação de Fluxos Complexos: Testar o ciclo de vida dos Check-ins e Seasons.
+---
 
-Automação: Início da escrita de scripts para automação de testes de regressão.
+## ⏩ Próximos Passos
+* Execução completa dos casos de teste (Semana 4 e 5).
+* Testes de regressão e re-teste de bugs corrigidos (Semana 6).
+* Gravação do vídeo final de demonstração (Semana 7).
