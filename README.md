@@ -1,4 +1,6 @@
 # Auditoria de QA - Projeto NaSalinha (Matheus Marques)
+Auditoria realizada por: Matheus Fellipe Araujo Marques
+Curso: Ciência da Computação - UFLA
 
 Este repositório contém a documentação da auditoria de qualidade realizada durante o Desafio 2026/1.
 
@@ -44,3 +46,23 @@ Para a próxima etapa, mapeei os seguintes cenários de teste para garantir a in
 Utilizo a aba **[Issues](https://github.com/Straffey/QA-Portfolio-NaSalinha/issues)** deste repositório para documentar falhas técnicas encontradas durante a auditoria. Atualmente, o seguinte bug está mapeado:
 
 * **ID #1:** Erro 401 (Unauthorized) na integração com Cloudinary.
+
+## 🚀 Semana 3: Auditoria Técnica
+Nesta etapa, realizei a validação do ambiente de backend do projeto NaSalinha.
+
+Ações realizadas:
+
+Setup: Clonagem do repositório base e configuração de variáveis de ambiente (.env).
+
+Containerização: Inicialização dos serviços de Banco de Dados (PostgreSQL) e API via Docker Compose.
+
+Persistência: Sincronização do schema do banco de dados utilizando Prisma ORM (npx prisma migrate dev).
+
+Validação de API: Testes de integração das rotas de autenticação via Insomnia, validando a geração de JWT (JSON Web Token).
+
+## ⏩ Próximos Passos (Semana 4 & 5)
+Com o ambiente estável e autenticação funcional, o foco agora será:
+
+Validação de Fluxos Complexos: Testar o ciclo de vida dos Check-ins e Seasons.
+
+Automação: Início da escrita de scripts para automação de testes de regressão.
