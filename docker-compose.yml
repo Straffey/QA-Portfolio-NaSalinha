@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_USER: nasalinha
+      POSTGRES_PASSWORD: nasalinha123
+      POSTGRES_DB: nasalinha_db
+    ports:
+      - "5433:5432"
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    # O PULO DO GATO: Forçamos o uso do node direto se o nodemon falhar
+    command: sh -c "npm install && node src/server.js"
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      # O usuário, a senha e o banco precisam ser IGUAIS aos do serviço 'db' acima
+      DATABASE_URL: "postgresql://nasalinha:nasalinha123@db:5432/nasalinha_db?schema=public"
+      JWT_SECRET: "7f8a9b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f"
