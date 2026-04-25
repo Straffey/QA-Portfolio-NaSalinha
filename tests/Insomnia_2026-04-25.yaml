@@ -1,0 +1,733 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: NaSalinha-Audit-Project
+meta:
+  id: wrk_536463cbb7354f5291bddf375bf56e06
+  created: 1777062658098
+  modified: 1777062658098
+  description: ""
+collection:
+  - url: localhost:5001
+    name: teste-abrir-site
+    meta:
+      id: req_2eacdbd6d13a43dbbb3c3f778117144e
+      created: 1776277338382
+      modified: 1777137910906
+      isPrivate: false
+      description: ""
+      sortKey: -1776277338382
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - name: Autenticação
+    meta:
+      id: fld_920610f7dcb144f48fdf256fcf22aad9
+      created: 1776301145645
+      modified: 1777137357532
+      sortKey: -1776301145645
+      description: ""
+    children:
+      - name: teste-logins
+        meta:
+          id: fld_d98b685b778f4dba867dc53a94bab614
+          created: 1776367259379
+          modified: 1777138110839
+          sortKey: -1776301153492
+          description: ""
+        children:
+          - url: http://localhost:5001/api/auth/login
+            name: loginCorreto
+            meta:
+              id: req_9bf09458d0194d4daa7eede422392cbe
+              created: 1776278486987
+              modified: 1777138774844
+              isPrivate: false
+              description: ""
+              sortKey: -1776367275239
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email": "teste@gmail.com",
+                	"password": "123456"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            authentication:
+              type: bearer
+              token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwZTE4NzkxZC01ZWZhLTQ3MWItYTQ1MS1lZjM2ZjEwYTAyMzkiLCJpYXQiOjE3NzcxMzc1MjMsImV4cCI6MTc3NzE0MTEyM30.GLS8eYyvlb8OKJgibcwtsiBkL86wGBFrT1r4t0NyY1Y
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/login
+            name: SemConta
+            meta:
+              id: req_10053c89de124032a4f85d7a52fda970
+              created: 1776367283384
+              modified: 1777138728673
+              isPrivate: false
+              description: ""
+              sortKey: -1776367283384
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email": "BLAAAAA@gmail.com",
+                	"password": "123456"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/login
+            name: Email-Invalido
+            meta:
+              id: req_69388e7aec6e495b9bc0b943e99a29d1
+              created: 1776367439785
+              modified: 1777138697706
+              isPrivate: false
+              description: ""
+              sortKey: -1776367439785
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email": "teste@gmail.com",
+                	"password": "senha123"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/login
+            name: SenhaErrada
+            meta:
+              id: req_25f7fe3e49b541798a167173ba12e0d1
+              created: 1776367514514
+              modified: 1777138712962
+              isPrivate: false
+              description: ""
+              sortKey: -1776367361584.5
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email": "teste@gmail.com",
+                	"password": "Errada"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/login
+            name: CamposVazios
+            meta:
+              id: req_39195aa6781b49de9c231040c4a1690b
+              created: 1776367550759
+              modified: 1777138682130
+              isPrivate: false
+              description: ""
+              sortKey: -1776367550759
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email": " ",
+                	"password": " "
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/login
+            name: SemSenha
+            meta:
+              id: req_fa2a49f2caf9460789f0183419a6f042
+              created: 1776367610722
+              modified: 1777138675302
+              isPrivate: false
+              description: ""
+              sortKey: -1776367610722
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email": "teste@gmail.com"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/login
+            name: SemEmail
+            meta:
+              id: req_ec9b6075ae28463f9fb25c0b03d76209
+              created: 1776367648030
+              modified: 1777138670383
+              isPrivate: false
+              description: ""
+              sortKey: -1776367648030
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"password": "123456"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/login
+            name: EmailFormatoErrado
+            meta:
+              id: req_c7315bfabea4456981ca2663a62dc24c
+              created: 1776367688098
+              modified: 1777138662295
+              isPrivate: false
+              description: ""
+              sortKey: -1776367688098
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email": "teste",
+                	"password": "123456"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/login
+            name: LetraErrada(case sensivite)
+            meta:
+              id: req_4c0e4323361a451fab3dce76b4aeb9ca
+              created: 1776367737787
+              modified: 1777138649605
+              isPrivate: false
+              description: ""
+              sortKey: -1776367737787
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email": "teSte@gmail.com",
+                	"password": "123456"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/login
+            name: Sql-Injection
+            meta:
+              id: req_8e7c94f9f79f4c24bec8dafc03ff75af
+              created: 1776367850800
+              modified: 1777138624416
+              isPrivate: false
+              description: ""
+              sortKey: -1776367850800
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email": "'OR 1=1 --",
+                	"password": "SQLinjection"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: cadastro
+        meta:
+          id: fld_e688dda768d74ebbb59e7632a18723e1
+          created: 1776368273890
+          modified: 1777137364602
+          sortKey: -1776301153592
+          description: ""
+        children:
+          - url: http://localhost:5001/api/auth/register
+            name: CadastroNormal
+            meta:
+              id: req_57569cc8d99c4ceab626ca3cf2180cdd
+              created: 1776277450287
+              modified: 1777138602742
+              isPrivate: false
+              description: ""
+              sortKey: -1776368285499
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name": "teste",
+                	"email": "teste@gmail.com",
+                	"password": "123456",
+                	"role": "MEMBER"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            authentication:
+              type: bearer
+              token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwZTE4NzkxZC01ZWZhLTQ3MWItYTQ1MS1lZjM2ZjEwYTAyMzkiLCJpYXQiOjE3NzcxMzc1MjMsImV4cCI6MTc3NzE0MTEyM30.GLS8eYyvlb8OKJgibcwtsiBkL86wGBFrT1r4t0NyY1Y
+              prefix: Bearer
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/register
+            name: SemNome
+            meta:
+              id: req_f715966412c6437792c6abc5d6736e4a
+              created: 1776368323646
+              modified: 1777138595528
+              isPrivate: false
+              description: ""
+              sortKey: -1776368323646
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name": "",
+                	"email": "teste@gmail.com",
+                	"password": "123456",
+                	"role": "TRAINEE"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/register
+            name: SemEmail
+            meta:
+              id: req_8f5f979b903842baa602984b0ea6dfe5
+              created: 1776368391058
+              modified: 1777138591274
+              isPrivate: false
+              description: ""
+              sortKey: -1776368391058
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name": "teste",
+                	"email": "",
+                	"password": "123456",
+                	"role": "TRAINEE"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/register
+            name: JáCadastrado
+            meta:
+              id: req_02e558a5251b4c98a72038fb777a11f3
+              created: 1776368430319
+              modified: 1777138583476
+              isPrivate: false
+              description: ""
+              sortKey: -1776368430319
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name": "teste",
+                	"email": "teste@gmail.com",
+                	"password": "123456",
+                	"role": "MEMBER"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/register
+            name: SenhaFraca
+            meta:
+              id: req_5a525e99e8a9435baf028587c3247ae5
+              created: 1776368468126
+              modified: 1777138571418
+              isPrivate: false
+              description: ""
+              sortKey: -1776368468126
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name": "teste",
+                	"email": "teste@gmail.com",
+                	"password": "123",
+                	"role": "TRAINEE"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/register
+            name: SemRoleContaExistente
+            meta:
+              id: req_10006028e79d4ec2a86eaac48ae6258e
+              created: 1776368527528
+              modified: 1777138565692
+              isPrivate: false
+              description: ""
+              sortKey: -1776368527528
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name": "teste",
+                	"email": "teste@gmail.com",
+                	"password": "123456"
+                	
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/register
+            name: SemRole
+            meta:
+              id: req_96b4cd98778944669d5d4442080d0501
+              created: 1776368602680
+              modified: 1777138560084
+              isPrivate: false
+              description: ""
+              sortKey: -1776368602680
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name": "teste",
+                	"email": "teste@gmail.com",
+                	"password": "123456"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/register
+            name: roleInexistente
+            meta:
+              id: req_e3a9597411f04133aba985dc5f932314
+              created: 1776368800910
+              modified: 1777138517839
+              isPrivate: false
+              description: ""
+              sortKey: -1776368800910
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name": "teste",
+                	"email": "teste@gmail.com",
+                	"password": "123456",
+                	"role": "PRESIDENTE"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/register
+            name: stringEspaço
+            meta:
+              id: req_aea88bce7e5d4ca292c7d86dbb511395
+              created: 1776369046999
+              modified: 1777138506765
+              isPrivate: false
+              description: ""
+              sortKey: -1776369046999
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name": "   teste    ",
+                	"email": "  teste@gmail.com   ",
+                	"password": "123456",
+                	"role": "TRAINEE"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:5001/api/auth/register
+            name: email&roleEspaço
+            meta:
+              id: req_ffb4e7ae13e84e6eafbcf69bc96e8143
+              created: 1776369117112
+              modified: 1777138494148
+              isPrivate: false
+              description: ""
+              sortKey: -1776369117112
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name": "teste",
+                	"email": "  teste@gmail.com" ,
+                	"password": "123456",
+                	"role": "   TRAINEE   "
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.5.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_7147b41a0d4f78591f4bc05965a1df130d2887fb
+    created: 1777062658101
+    modified: 1777062658101
+environments:
+  name: Base Environment
+  meta:
+    id: env_7147b41a0d4f78591f4bc05965a1df130d2887fb
+    created: 1777062658100
+    modified: 1777062658100
+    isPrivate: false
