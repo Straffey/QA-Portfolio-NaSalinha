@@ -88,6 +88,52 @@ Rastreamento de melhorias e correções:
 
 ---
 
+# 🚀 Relatório de Auditoria e Qualidade - Semana 4
+
+Este repositório contém a auditoria técnica e os testes de QA realizados no sistema **NaSalinha**. O foco desta sprint foi a estabilização do ambiente Docker, integração com serviços externos e validação das regras de negócio.
+
+---
+
+## 🛠️ Status do Ambiente
+O ambiente foi totalmente provisionado e validado via Docker:
+* **Backend**: Node.js/Prisma operando em containers isolados.
+* **Database**: PostgreSQL com integridade referencial validada (testes de exclusão em cascata bem-sucedidos).
+* **Storage**: Integração com Cloudinary ativa para persistência de mídia de check-ins.
+
+---
+
+## 🔍 Backlog de Bugs Encontrados (Issues)
+Durante a auditoria, foram identificadas falhas críticas que comprometem a segurança e a gamificação do sistema:
+
+| ID | Descrição do Bug | Severidade | Status |
+| :--- | :--- | :--- | :--- |
+| **#01** | Cadastro e login permitidos sem verificação de e-mail (Violação RF-01/RF-02) | Crítica | Aberto |
+| **#27** | Permissão de Check-in em Temporada Encerrada | Alta | Aberto |
+| **#28** | Check-ins ignoram moderação (Aprovação automática no Banco) | Crítica | Aberto |
+| **#29** | Falha na restrição de frequência (Múltiplos check-ins permitidos por dia) | Crítica | Aberto |
+| **#30** | Ranking Geral não atualiza após exclusão manual de foto pelo Admin | Alta | Aberto |
+
+---
+
+## ✅ Testes de Sucesso (Sanidade e Usabilidade)
+Apesar dos bugs de regra de negócio, os seguintes fluxos técnicos foram validados com sucesso:
+* **Integridade de Dados**: A exclusão de um usuário remove corretamente todos os seus pontos e registros do ranking (sem dados órfãos).
+* **Validação de Client-side**: O sistema bloqueia corretamente o upload de arquivos que não sejam imagens (ex: PDFs).
+* **Responsividade**: Interface validada para dispositivos móveis via DevTools, garantindo usabilidade para estudantes em campo.
+
+---
+
+## 📁 Evidências de Teste
+Para manter o repositório focado exclusivamente no código e infraestrutura, todas as evidências visuais (capturas de tela e logs) foram vinculadas diretamente às suas respectivas **Issues**.
+
+* **Acesso**: Navegue até a aba [Issues](https://github.com/Straffey/QA-Portfolio-NaSalinha/issues) para visualizar os registros detalhados com seus devidos anexos.
+
+---
+
+## 🚀 Próximos Passos (Sugestão para Sprint 5)
+1. **Correção Prioritária (#28)**: Implementar o status `PENDING` como padrão para novos check-ins.
+2. **Middleware de Data**: Validar no Backend se a temporada está ativa antes de aceitar o upload.
+
 ## ⏩ Próximos Passos
 
 - [ ] Automação de scripts de teste (Semana 4 e 5).
