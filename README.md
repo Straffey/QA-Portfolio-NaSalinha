@@ -155,6 +155,6 @@ Para auditar e reproduzir as validações mapeadas neste portfólio, execute o p
 4. Importar Massa de Testes no Insomnia: Importe a collection oficial localizada na pasta de testes.
 
 5. Configurar Credenciais: Utilize o e-mail admin@nasalinha.com e a senha senha123 no endpoint POST /api/auth/login para capturar e atualizar seu token global de autorização.
-'@ | Out-File -FilePath .\README.md -Append -Encoding utf8
+
    
 
