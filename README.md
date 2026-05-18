@@ -130,10 +130,10 @@ Ao encerrar o ciclo completo de auditoria e automação na suíte do Insomnia, a
 
 | Métrica | Valor |
 | :--- | :--- |
-| **Testes Totais Executados** | 29 |
+| **Testes Totais Executados** | 30 |
 | **Passou (Test Done)** | 17 |
-| **Falhou (Bugs Encontrados)** | 12 |
-| **Taxa de Defeitos (Defect Density)**| 41.3% |
+| **Falhou (Bugs Encontrados)** | 13 |
+| **Taxa de Defeitos (Defect Density)**| 43.3% |
 | **Status Final da Sprint** | 🔴 **Reprovado (Retido para Correções)** |
 
 > ⚠️ **Parecer Técnico do QA**: O sistema foi formalmente *Reprovado nesta Sprint* devido à alta densidade de bugs críticos encontrados em fluxos vitais. Embora 17 cenários fundamentais (como validações sintáticas de cadastro e barramento de mídias ausentes) tenham passado com sucesso, os 12 bugs mapeados expõem falhas severas de segurança e integridade (vazamento de tokens no registro, estouro de exceções 500 e quebra do fluxo de moderação da diretoria). O deploy em produção está vetado até a mitigação do backlog.
