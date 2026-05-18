@@ -80,6 +80,8 @@ Fase de superação de bloqueios de dados. Investigação profunda nas tabelas d
 ### 🔄 Semana 6: Roteiro Geral de Testes de Regressão e Re-teste
 Garantia de imunidade a efeitos colaterais. Elaboração do plano de teste de regressão para os 10 bugs reportados, visando certificar que as correções aplicadas pela engenharia não quebrem funcionalidades antigas.
 
+
+
 #### 🧪 Roteiros de Teste de Regressão Criados
 
 1. **Validação de Vigência (Issue #27)**:
@@ -122,6 +124,20 @@ Garantia de imunidade a efeitos colaterais. Elaboração do plano de teste de re
     * *Re-teste*: Tentar salvar uma temporada com o ano extrapolado (ex: `999999-01-01`). O backend deve retornar HTTP `400 Bad Request`.
     * *Regressão*: Criar uma temporada com uma data ISO padrão válida dentro do ano letivo vigente. A validação do schema não deve ser restritiva a ponto de impedir o uso normal do sistema.
 
+    ## 📊 4. Relatório de Testes (Sumário Final Consolidador)
+
+Ao encerrar o ciclo completo de auditoria e automação na suíte do Insomnia, a cobertura de qualidade do ecossistema **NaSalinha** gerou a seguinte matriz de entrega estável:
+
+| Métrica | Valor |
+| :--- | :--- |
+| **Testes Totais Executados** | 29 |
+| **Passou (Test Done)** | 17 |
+| **Falhou (Bugs Encontrados)** | 12 |
+| **Taxa de Defeitos (Defect Density)**| 41.3% |
+| **Status Final da Sprint** | 🔴 **Reprovado (Retido para Correções)** |
+
+> ⚠️ **Parecer Técnico do QA**: O sistema foi formalmente *Reprovado nesta Sprint* devido à alta densidade de bugs críticos encontrados em fluxos vitais. Embora 17 cenários fundamentais (como validações sintáticas de cadastro e barramento de mídias ausentes) tenham passado com sucesso, os 12 bugs mapeados expõem falhas severas de segurança e integridade (vazamento de tokens no registro, estouro de exceções 500 e quebra do fluxo de moderação da diretoria). O deploy em produção está vetado até a mitigação do backlog.
+
    ## 🧪 Como Replicar os Testes Locais
 
 Para auditar e reproduzir as validações mapeadas neste portfólio, execute o passo a passo a seguir:
@@ -141,3 +157,30 @@ Para auditar e reproduzir as validações mapeadas neste portfólio, execute o p
 5. Configurar Credenciais: Utilize o e-mail admin@nasalinha.com e a senha senha123 no endpoint POST /api/auth/login para capturar e atualizar seu token global de autorização.
 '@ | Out-File -FilePath .\README.md -Append -Encoding utf8
    
+## 📊 4. Relatório de Testes (Sumário Final Consolidador)
+
+Ao encerrar o ciclo completo de auditoria e automação na suíte do Insomnia, a cobertura de qualidade do ecossistema **NaSalinha** gerou a seguinte matriz de entrega estável:
+
+| Métrica | Valor |
+| :--- | :--- |
+| **Testes Totais Executados** | 29 |
+| **Passou (Test Done)** | 17 |
+| **Falhou (Bugs Encontrados)** | 12 |
+| **Taxa de Defeitos (Defect Density)**| 41.3% |
+| **Status Final da Sprint** | 🔴 **Reprovado (Retido para Correções)** |
+
+> ⚠️ **Parecer Técnico do QA**: O sistema foi formalmente *Reprovado nesta Sprint* devido à alta densidade de bugs críticos encontrados em fluxos vitais. Embora 17 cenários fundamentais (como validações sintáticas de cadastro e barramento de mídias ausentes) tenham passado com sucesso, os 12 bugs mapeados expõem falhas severas de segurança e integridade (vazamento de tokens no registro, estouro de exceções 500 e quebra do fluxo de moderação da diretoria). O deploy em produção está vetado até a mitigação do backlog.
+
+## 📊 4. Relatório de Testes (Sumário Final Consolidador)
+
+Ao encerrar o ciclo completo de auditoria e automação na suíte do Insomnia, a cobertura de qualidade do ecossistema **NaSalinha** gerou a seguinte matriz de entrega estável:
+
+| Métrica | Valor |
+| :--- | :--- |
+| **Testes Totais Executados** | 29 |
+| **Passou (Test Done)** | 17 |
+| **Falhou (Bugs Encontrados)** | 12 |
+| **Taxa de Defeitos (Defect Density)**| 41.3% |
+| **Status Final da Sprint** | 🔴 **Reprovado (Retido para Correções)** |
+
+> ⚠️ **Parecer Técnico do QA**: O sistema foi formalmente *Reprovado nesta Sprint* devido à alta densidade de bugs críticos encontrados em fluxos vitais. Embora 17 cenários fundamentais (como validações sintáticas de cadastro e barramento de mídias ausentes) tenham passado com sucesso, os 12 bugs mapeados expõem falhas severas de segurança e integridade (vazamento de tokens no registro, estouro de exceções 500 e quebra do fluxo de moderação da diretoria). O deploy em produção está vetado até a mitigação do backlog.
