@@ -62,10 +62,10 @@ Fase dedicada à quebra assistida do sistema, gerando relatórios de falhas com 
 | ID da Issue | Descrição Técnica da Falha | Camada Afetada | Severidade | Status |
 | :---: | :--- | :---: | :---: | :---: |
 | **#27** | Permissão de Check-in em Temporada com vigência Encerrada | Backend | Alta | Aberto |
-| **#28** | Check-ins ignoram estágio de moderação (Auto-approval automático) | Backend | Crítica | Aberto |
-| **#29** | Falha na restrição de frequência (Permite múltiplos check-ins diários) | Backend | Crítica | Aberto |
+| **#28** | Check-ins ignoram estágio de moderação (Auto-approval automático) | Backend | Alta | Aberto |
+| **#29** | Falha na restrição de frequência (Permite múltiplos check-ins diários) | Backend | Alta | Aberto |
 | **#30** | Ranking Geral não atualiza após a exclusão manual de uma foto pelo Admin | Banco de Dados | Alta | Aberto |
-| **#31 / #38**| Autenticação e sessão permitidas sem verificação prévia de e-mail | Backend | Crítica | Aberto |
+| **#31 / #38**| Autenticação e sessão permitidas sem verificação prévia de e-mail | Backend | Alta | Aberto |
 
 ### 🛠️ Semana 5: Debugging Avançado, Data Seeding e Prisma Integration
 Fase de superação de bloqueios de dados. Investigação profunda nas tabelas do PostgreSQL e injeção controlada de privilégios para testes avançados.
